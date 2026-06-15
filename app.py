@@ -74,7 +74,7 @@ def guardar():
 
     try:
         requests.post(
-            "https://php1-production-46c4.up.railway.app/registro.php",
+            "https://php1-production-46c4.up.railway.app/index.php",
             json=datos
         )
     except Exception as e:
