@@ -63,7 +63,7 @@ def guardar():
         "fecha_hora": fecha_hora
     }
 
-    print(datos)
+    #print(datos)
     
     return render_template(
         "index.html",
@@ -76,6 +76,7 @@ def guardar():
         requests.post(
             "https://php1-production-46c4.up.railway.app/index.php",
             json=datos
+            print(datos)
         )
     except Exception as e:
         print(e)
