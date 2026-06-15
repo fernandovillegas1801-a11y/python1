@@ -84,6 +84,5 @@ def guardar():
         session.pop("puntaje", None)
 
         return redirect(url_for("index"))
-    )
 
 
