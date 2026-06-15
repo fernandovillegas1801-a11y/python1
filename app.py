@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session
 import random
-import requests
+#import requests
 from datetime import datetime
 
 app = Flask(__name__)
