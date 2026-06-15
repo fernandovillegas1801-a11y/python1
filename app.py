@@ -75,7 +75,6 @@ def guardar():
         )
     
         print("Status:", response.status_code)
-        print("Headers:", response.headers)
         print("Respuesta:", response.text)
 
     except Exception as e:
