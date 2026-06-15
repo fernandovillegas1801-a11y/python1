@@ -85,8 +85,6 @@ def guardar():
         session.pop("gano", None)
         session.pop("intentos_finales", None)
 
-
-    
     return render_template(
         "index.html",
         mensaje="Resultado guardado correctamente",
@@ -94,16 +92,3 @@ def guardar():
     )
 
 
-   
-
-
-
-
-
-"""
-    return render_template(
-        "index.html",
-        mensaje=f"Resultado guardado correctamente para {nombre}. Se ha generado un nuevo número."
-    )
-"""
-  
