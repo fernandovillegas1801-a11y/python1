@@ -11,7 +11,7 @@ app.secret_key = "clave-super-secreta"  # Necesaria para manejar sesiones
 def index():
     # Si no existe número en sesión, lo crea
     if "numero" not in session:
-        session["numero"] = random.randint(1, 3)
+        session["numero"] = random.randint(1, 2)
     if "veces" not in session:
         session["veces"] = 0
 
@@ -34,7 +34,7 @@ def index():
                 mensaje = "¡Adivinaste! Registra tu puntuación."
                 gane = True
                 
-                session["numero"] = random.randint(1, 100)
+                session["numero"] = random.randint(1, 2)
                 session["puntaje"] = session["veces"]
                 session["veces"] = 0
         
