@@ -48,7 +48,6 @@ def index():
     )
 
 
-
 @app.route("/guardar", methods=["POST"])
 def guardar():
 
@@ -89,7 +88,7 @@ def guardar():
 
     
     return render_template(
-        "../index.html",
+        "index.html",
         mensaje="Resultado guardado correctamente",
         pedir_nombre=False
     )
