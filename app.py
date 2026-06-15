@@ -64,6 +64,29 @@ def guardar():
     }
 
     print(datos)
+
+
+    try:
+        response = requests.post(
+            "https://php1-production-46c4.up.railway.app/index.php",
+            json=datos,
+            timeout=30
+        )
+    
+        print("Status:", response.status_code)
+        print("Headers:", response.headers)
+        print("Respuesta:", response.text)
+
+    except Exception as e:
+        print("Error:", str(e))
+    
+        # Reiniciar juego
+        session["numero"] = random.randint(1, 100)
+        session["veces"] = 0
+        session.pop("gano", None)
+        session.pop("intentos_finales", None)
+
+
     
     return render_template(
         "index.html",
@@ -72,25 +95,7 @@ def guardar():
     )
 
 
-   try:
-    response = requests.post(
-        "https://php1-production-46c4.up.railway.app/index.php",
-        json=datos,
-        timeout=30
-    )
-
-    print("Status:", response.status_code)
-    print("Headers:", response.headers)
-    print("Respuesta:", response.text)
-
-except Exception as e:
-    print("Error:", str(e))
-
-    # Reiniciar juego
-    session["numero"] = random.randint(1, 100)
-    session["veces"] = 0
-    session.pop("gano", None)
-    session.pop("intentos_finales", None)
+   
 
 
 
