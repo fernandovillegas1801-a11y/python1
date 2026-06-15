@@ -71,10 +71,10 @@ def guardar():
         pedir_nombre=False
     )
 
-"""
+
     try:
         requests.post(
-            "https://tudominio.com/api/guardar_resultado.php",
+            "https://php1-production-46c4.up.railway.app/",
             json=datos
         )
     except Exception as e:
@@ -85,15 +85,10 @@ def guardar():
     session["veces"] = 0
     session.pop("gano", None)
     session.pop("intentos_finales", None)
-
+"""
     return render_template(
         "index.html",
         mensaje=f"Resultado guardado correctamente para {nombre}. Se ha generado un nuevo número."
     )
-
-
-
 """
-
-
-   
+  
