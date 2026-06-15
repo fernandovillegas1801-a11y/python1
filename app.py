@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session
 import random
 from datetime import datetime
 from zoneinfo import ZoneInfo
+import requests
 
 app = Flask(__name__)
 app.secret_key = "clave-super-secreta"  # Necesaria para manejar sesiones
