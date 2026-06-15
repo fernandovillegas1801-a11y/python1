@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 import random
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -78,11 +78,11 @@ def guardar():
     except Exception as e:
         print("Error:", str(e))
     
-        # Reiniciar juego
-        session["numero"] = random.randint(1, 100)
-        session["veces"] = 0
-        session.pop("puntaje", None)
+    # Reiniciar juego
+    session["numero"] = random.randint(1, 100)
+    session["veces"] = 0
+    session.pop("puntaje", None)
 
-        return redirect(url_for("index"))
+    return redirect(url_for("index"))
 
 
