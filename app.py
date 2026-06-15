@@ -35,7 +35,7 @@ def index():
                 gane = True
                 
                 session["numero"] = random.randint(1, 100)
-                session["puntaje"] = session["veces"]
+                session["puntaje"] = veces_actual
                 session["veces"] = 0
         
         except ValueError:
@@ -65,7 +65,6 @@ def guardar():
 
     print(datos)
 
-
     try:
         response = requests.post(
             "https://php1-production-46c4.up.railway.app/index.php",
@@ -82,13 +81,9 @@ def guardar():
         # Reiniciar juego
         session["numero"] = random.randint(1, 100)
         session["veces"] = 0
-        session.pop("gano", None)
-        session.pop("intentos_finales", None)
+        session.pop("puntaje", None)
 
-    return render_template(
-        "/",
-        mensaje="Resultado guardado correctamente",
-        pedir_nombre=False
+        return redirect(url_for("index"))
     )
 
 
