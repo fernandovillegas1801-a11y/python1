@@ -86,7 +86,7 @@ def guardar():
         session.pop("intentos_finales", None)
 
     return render_template(
-        "index.html",
+        "/",
         mensaje="Resultado guardado correctamente",
         pedir_nombre=False
     )
